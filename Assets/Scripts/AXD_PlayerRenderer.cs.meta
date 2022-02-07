@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/AXD_PlayerRenderer.cs.meta
 guid: 9eeb451d9fe36bb4798d6f25c74cea8b
+=======
+guid: a06c60c28febc08419ecf92f9db812f3
+>>>>>>> Matthieu:Assets/MBO_Ressources/Scripts/Score.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
