@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/AXD_SceneManager.cs.meta
 guid: 02e37555300b92544aa16da9f8536f6a
+=======
+guid: 290ada4b8283d3d4295e9169f218436e
+>>>>>>> Matthieu:Assets/MBO_Ressources/Scripts/ScoreScriptable.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

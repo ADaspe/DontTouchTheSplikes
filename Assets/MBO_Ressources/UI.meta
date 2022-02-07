@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/MBO_Ressources/UI.meta
 guid: 47770ac61ca30c14197c47b28af19b92
+=======
+guid: e56ad1dbc9dd9d8438db4b9bc59ecbc4
+>>>>>>> Matthieu:Assets/MBO_Ressources/Scripts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
