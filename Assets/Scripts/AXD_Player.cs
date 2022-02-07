@@ -8,6 +8,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using Scene = UnityEngine.SceneManagement.Scene;
 
 public class AXD_Player : MonoBehaviour
@@ -17,7 +18,7 @@ public class AXD_Player : MonoBehaviour
     public GameObject DieUI;
     public float forceToAddWhenTouch;
     public Vector2 currentDir;
-    public UnityEvent scoreUp;
+    public UnityEvent touchWallEvent;
 
     public float speed;
     // Start is called before the first frame update
@@ -53,7 +54,7 @@ public class AXD_Player : MonoBehaviour
             Debug.Log("Touch Wall");
             if (!isDead)
             {
-                scoreUp.Invoke();
+                touchWallEvent.Invoke();
                 currentDir *= -1;
                 rb.velocity = new Vector2(currentDir.x * speed, 0);
             }
