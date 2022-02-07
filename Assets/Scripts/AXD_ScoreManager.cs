@@ -21,6 +21,9 @@ public class AXD_ScoreManager : MonoBehaviour
         {
             highScore = 0;
         }
+
+        scoreTextUi.text = score.ToString();
+        
     }
 
     public void AddScore(int scoreToAdd = 1)
