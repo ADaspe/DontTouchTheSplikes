@@ -37,7 +37,7 @@ public class LAC_GenerateWallPic : MonoBehaviour
             picPos.Add((origin + i * picSpacing * Vector3.up));
         }
     }
-    void GeneratePic()
+    public void GeneratePic()
     {
         foreach (GameObject o in pic)
             Destroy(o);
