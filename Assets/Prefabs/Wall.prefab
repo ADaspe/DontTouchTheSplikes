@@ -74,7 +74,7 @@ MonoBehaviour:
   wall: {fileID: 6119501975743496044}
   wallCollier: {fileID: 0}
   picPrefab: {fileID: 1109626183674905323, guid: f0b3c1f35a2743b478759130cf4bd80f, type: 3}
-  wallHeight: 20
+  wallHeight: 14
   picSpacing: 2
   yOffeset: 1
   spawnRatio: 0.5
