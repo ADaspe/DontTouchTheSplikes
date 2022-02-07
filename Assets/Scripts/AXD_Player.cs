@@ -16,6 +16,7 @@ public class AXD_Player : MonoBehaviour
     private Rigidbody2D rb;
     public bool isDead;
     public GameObject DieUI;
+    public AXD_PlayerRenderer axdRenderer;
     public float forceToAddWhenTouch;
     public Vector2 currentDir;
     public UnityEvent touchWallEvent;
@@ -26,9 +27,10 @@ public class AXD_Player : MonoBehaviour
     {
         isDead = false;
         rb = GetComponent<Rigidbody2D>();
+        axdRenderer = GetComponent<AXD_PlayerRenderer>();
         currentDir = new Vector2(1, 0);
         rb.velocity = currentDir * speed;
-
+        
     }
 
     // Update is called once per frame
@@ -39,17 +41,19 @@ public class AXD_Player : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("Touch");
+                StartCoroutine(axdRenderer.FlapCoroutine());
                 rb.AddForce(new Vector2(0, currentDir.y + forceToAddWhenTouch) * speed);
             }
         }
     }
-
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Wall")){
             if (!isDead)
             {
                 touchWallEvent.Invoke();
+                other.gameObject.GetComponent<LAC_GenerateWallPic>().touchWall.Invoke();
                 currentDir *= -1;
                 rb.velocity = new Vector2(currentDir.x * speed, 0);
             }
