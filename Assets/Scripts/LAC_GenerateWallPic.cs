@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class LAC_GenerateWallPic : MonoBehaviour
 {
     [Header("Ref")]
     [SerializeField] GameObject wall;
+    [SerializeField] BoxCollider2D wallCollier;
     [SerializeField] GameObject picPrefab;
 
     [Header("Pos Settings")]
@@ -19,7 +21,7 @@ public class LAC_GenerateWallPic : MonoBehaviour
     List<Vector3> picPos = new List<Vector3>();
     List<GameObject> pic = new List<GameObject>();
 
-
+    public UnityEvent touchWall;
     private void Start()
     {
 
@@ -39,13 +41,9 @@ public class LAC_GenerateWallPic : MonoBehaviour
     }
     public void GeneratePic()
     {
-        foreach (GameObject o in pic)
-            Destroy(o);
-
+        DestroyPic();
         for (int i = 0; i < picPos.Count; i++)
         {
-            
-
             Debug.Log("Pos" + picPos[i]);
             if (Random.value >= spawnRatio)
             {
@@ -54,6 +52,13 @@ public class LAC_GenerateWallPic : MonoBehaviour
             }
         }
 
+    }
+
+    public void DestroyPic()
+    {
+        foreach (GameObject o in pic)
+            Destroy(o);
+        pic.Clear();
     }
 
     private void OnDrawGizmos()
@@ -70,5 +75,7 @@ public class LAC_GenerateWallPic : MonoBehaviour
     {
         GeneratePic();
     }
+
+
 
 }
