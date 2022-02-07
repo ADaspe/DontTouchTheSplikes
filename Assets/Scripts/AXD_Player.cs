@@ -41,17 +41,12 @@ public class AXD_Player : MonoBehaviour
                 Debug.Log("Touch");
                 rb.AddForce(new Vector2(0, currentDir.y + forceToAddWhenTouch) * speed);
             }
-            else
-            {
-                //rb.AddForce(currentDir * speed);
-            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Wall")){
-            Debug.Log("Touch Wall");
             if (!isDead)
             {
                 touchWallEvent.Invoke();
@@ -64,7 +59,6 @@ public class AXD_Player : MonoBehaviour
             Debug.Log("Death");
             isDead = true;
             DieUI.SetActive(true);
-            //Death
         }
         {
             Debug.Log(other.gameObject.name);
