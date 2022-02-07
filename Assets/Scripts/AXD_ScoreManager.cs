@@ -30,7 +30,9 @@ public class AXD_ScoreManager : MonoBehaviour
         {
             highScore = score;
             PlayerPrefs.SetInt("HighScore",highScore);
-            highScoreTextUI.text = highScore.ToString();
+            if(highScoreTextUI != null){
+                highScoreTextUI.text = highScore.ToString();
+            }
         }
         scoreTextUi.text = score.ToString();
     }
