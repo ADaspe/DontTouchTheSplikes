@@ -126,4 +126,4 @@ MonoBehaviour:
   wallHeight: 20
   picSpacing: 2
   yOffeset: 1
-  spawnRatio: 0
+  spawnRatio: 0.5
